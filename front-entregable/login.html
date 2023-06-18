@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign_In</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="orangeBG">
+            <div class="box signin">
+                <h2>Bienvenido a ValiCor</h2>
+                <button class="signinBtn">Inicio de Sesión</button>
+            </div>
+            <div class="box signup">
+                <h2>Crea tu usuario</h2>
+                <button class="signupBtn">Crear</button>
+            </div>
+        <div class="form-box">
+            <div class="form signinform">
+                <form id="ingreso">
+                    <h3>Ingresar</h3>
+                        <input type="text" id="NomU" placeholder="Usuario">                  
+                            <input type="password" id="contraU" placeholder="Contraseña">
+                                <a href="./proveedores.html"><button type="submit" style="background:#ff851b; font-size: 25px; border-radius: 1px;">Ingresar</button></a> 
+                </form >
+            </div>
+        <div class="form signupform">
+            <form id="login-form">
+                <h3>Registrarse</h3>
+                <input type="text" id="nombreUsu" placeholder="Usuario">
+                    <input type="password" id="contrasenaUsu" placeholder="Contraseña">
+                        <input type="password" id="confirmarContra" placeholder="Confirmar Contraseña">
+                            <input type="email" id="emailUsu" placeholder="Correo Electrónico">
+
+                <label for="rolUsu">Rol</label>
+                    <select id="rolUsu"  type="text" class="form-input" >
+                        <option value="Admin" selected>Admin</option>
+                        <option value="Auxiliar">Auxiliar</option>
+                    </select>
+
+                <label for="estadoUsu">Estado</label>
+                    <select id="estadoUsu"  type="text" class="form-input" >
+                        <option value="true" selected>Activo</option>
+                        <option value="false">Inactivo</option>   
+                    </select>
+                <button id="btn-registrarUsu" type="button" style="background:#0661c9c0; font-size: 25px; border-radius: 1px;">Registrar</button>
+            </form>
+        </div>
+      </div>
+    </div>
+    <script src="./js/loginfunciones.js"></script>
+    <script src="./js/funciones.js"></script>
+</body>
+</html>

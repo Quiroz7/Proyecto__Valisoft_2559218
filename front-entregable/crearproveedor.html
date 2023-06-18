@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear_Proveedor</title>
+    <link rel="stylesheet" href="./css/stylecrear.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor">
+            
+            <div class="logo">
+                <button class="btn-home"><a href="./proveedores.html">ValiCor</button></a>
+            </div>
+            <nav class="menu">
+                <a href="#"></a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <form  class="form">
+            <div class="form-header">
+                <h1 class="form-title">C<span>rear Proveedor</span></h1>
+            </div>
+
+            <label for="nombreProveedor" class="form-label">Nombre Proveedor</label>
+                <input type="text" class="form-input" id="nombreProveedor">
+
+            <label for="nit" class="form-label">NIT</label>
+                <input type="text" class="form-input" id="nit">
+
+            <label for="emailProv" class="form-label">Email</label>
+                <input type="email" class="form-input" id="emailProv">   
+                
+            <label for="telefonoProv" class="form-label">Teléfono</label>
+                <input type="number" class="form-input" id="telefonoProv"> 
+                
+            <label class="form-label" for="categoriaProv">Categoría</label>
+                <select id="categoriaProv"  type="text" class="form-input" >
+                    <option value="Lácteos" selected>Lácteos</option>
+                    <option value="Licores">Licores</option>
+                    <option value="Abarrotes">Abarrotes</option>
+                    <option value="Gaseosas">Gaseosas</option>
+                    <option value="Aseo">Aseo</option>
+                </select>
+
+            <label class="form-label" for="estadoProv">Estado</label>
+                <select id="estadoProv"  type="text" class="form-input" >
+                    <option value="true" selected>Activo</option>
+                    <option value="false">Inactivo</option>   
+                </select>
+
+            <button id="btn-crearProv" type="button" class="btn-submit">Registrar</button>    
+            
+        </form>
+    </div>
+    
+    <script src="./js/funciones.js"></script>
+</body>
+</html>

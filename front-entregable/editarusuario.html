@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar_Usuario</title>
+    <link rel="stylesheet" href="./css/styleeditar.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body id="editarUsuarioBody">
+    <header class="header">
+        <div class="contenedor">
+            
+            <div class="logo">
+                <button class="btn-home"><a href="./usuarios.html">ValiCor</button></a>
+            </div>
+            <nav class="menu">
+                <a href="#"></a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <form  class="form">
+            <input type="hidden" id="_id">
+
+            <div class="form-header">
+                <h1 class="form-title">E<span>ditar Usuario</span></h1>
+            </div>
+
+            <label for="nombreUsu" class="form-label">Nombre Usuario</label>
+                <input type="text" class="form-input" id="nombreUsu">
+
+            <label for="contrasenaUsu" class="form-label">Contraseña</label>
+                <input type="password" class="form-input" id="contrasenaUsu">
+
+            <label for="confirmarContra" class="form-label">Confirmar Contraseña</label>
+                <input type="password" class="form-input" id="confirmarContra">
+
+            <label for="emailUsu" class="form-label">Email</label>
+                <input type="email" class="form-input" id="emailUsu">   
+                    
+            <label class="form-label" for="rolUsu">Rol</label>
+                <select id="rolUsu"  type="text" class="form-input" >
+                    <option value="Admin" selected>Admin</option>
+                    <option value="Auxiliar">Auxiliar</option>
+                </select>
+
+            <label class="form-label" for="estadoUsu">Estado</label>
+                <select id="estadoUsu"  type="text" class="form-input" >
+                    <option value="true" selected>Activo</option>
+                    <option value="false">Inactivo</option>   
+                </select>
+
+            <button id="btn-actualizarUsu" type="button" class="btn-submit">Actualizar</button>    
+            
+        </form>
+    </div>
+    
+    <script src="./js/funciones.js"></script>
+</body>
+</html>

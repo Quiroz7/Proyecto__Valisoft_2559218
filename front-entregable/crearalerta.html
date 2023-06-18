@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear_Alerta</title>
+    <link rel="stylesheet" href="./css/stylecrear.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor">
+            
+            <div class="logo">
+                <button class="btn-home"><a href="./alertas.html">ValiCor</button></a>
+            </div>
+            <nav class="menu">
+                <a href="#"></a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <form  class="form">
+            <div class="form-header">
+                <h1 class="form-title">C<span>rear Alerta</span></h1>
+            </div>
+
+            <label for="enteRegulatorio" class="form-label">Ente Regulatorio</label>
+                <input type="text" class="form-input" id="enteRegulatorio">
+
+            <label for="fechaAlerta" class="form-label">fecha</label>
+                <input type="date" class="form-input" id="fechaAlerta">
+                            
+            <label for="mensajeAlerta" class="form-label">Mensaje</label>
+                <textarea  class="form-input" id="mensajeAlerta"></textarea>
+                
+            <button id="btn-crearAlert" type="button" class="btn-submit">Registrar</button>    
+            
+        </form>
+    </div>
+    
+    <script src="./js/funciones.js"></script>
+</body>
+</html>
