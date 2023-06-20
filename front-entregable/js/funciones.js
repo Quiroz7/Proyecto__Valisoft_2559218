@@ -1,6 +1,6 @@
-const url = 'http://localhost:8085/api/proveedores' 
-const urlUsu = 'http://localhost:8085/api/usuarios' 
-const urlalert = 'http://localhost:8085/api/alertas' 
+const url = 'https://project-valisoft-2559218.onrender.com/api/proveedores' 
+const urlUsu = 'https://project-valisoft-2559218.onrender.com/api/usuarios' 
+const urlalert = 'https://project-valisoft-2559218.onrender.com/api/alertas' 
 
 // --> PROVEEDORES <--
 const listarProveedores = async() => {
