@@ -57,8 +57,8 @@ const crearProveedores = async() => {
     .then(response => response.json() )
     .then(json => {
         console.log(json.mensaje.errors)
-        const {...errores} = json.mansaje.errors;
-        error = {...errores?.message}
+        const {...errors} = json.mansaje;
+        error = {...errors?.message}
         docuemnt.querySelector('#nombreProveedorError').innerText = error['nombreProveedor']
     })
 }
