@@ -53,7 +53,7 @@ const crearProveedores = async() => {
     })
     .then(response => response.json() )
     .then(json => {
-        alert(json.mensaje)
+        alert(JSON.stringify(json.mensaje))
     })
 }
 
