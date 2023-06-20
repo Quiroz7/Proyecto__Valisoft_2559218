@@ -184,7 +184,7 @@ const registrarUsuario = async() => {
         })
         .then(response => response.json() )
         .then(json => {
-            alert(json.mensaje)
+            console.log(json.mensaje.errors)
         })
     }else{
         alert('La contraseña y la confirmación de la contraseña no coiciden')
@@ -316,7 +316,7 @@ const crearAlertas = async() => {
     })
     .then(response => response.json() )
     .then(json => {
-        alert(json.mensaje)
+        console.log(json.mensaje.errors)
     })
 }
 
