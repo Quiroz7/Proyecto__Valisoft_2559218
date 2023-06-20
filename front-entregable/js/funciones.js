@@ -36,6 +36,9 @@ const crearProveedores = async() => {
     let telefonoProv = document.getElementById('telefonoProv').value
     let categoriaProv = document.getElementById('categoriaProv').value
     let estadoProv = document.getElementById('estadoProv').value
+    let errores = {
+        nombreProveedorError: ''
+    }
 
     let proveedor = {
         nombreProveedor : nombreProveedor,
@@ -54,6 +57,9 @@ const crearProveedores = async() => {
     .then(response => response.json() )
     .then(json => {
         console.log(json.mensaje.errors)
+        const {...errores} = json.manesaje.errors;
+        error = {...errores?.message}
+        docuemnt.querySelector('#nombreProveedorError').innerText = error['nombreProveedor']
     })
 }
 
