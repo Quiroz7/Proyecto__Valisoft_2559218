@@ -50,44 +50,6 @@ signinBtn.onclick=function(){
 			}
 		})
 
-		// const expresionEmail = 	/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/
-		// const expresionconfirmContra = /^[0-9]{2}[a-zA-Z]{4}$/
 		
-		// const form2 = document.querySelector('#login-form');
-
-		// form.addEventListener('submit' , e => {
-		// 	e.preventDefault();
-		// 	const emailUsu = e.target.emailUsu.value;
-		// 	const contrasenaUsu = e.target.contrasenaUsu.value;
-		// 	const nombreUsu = e.target.nombreUsu.value;
-		// 	const confirmarContra = e.target.confirmarContra.value;
-		// 	const rolUsu = e.target.rolUsu.value;
-		// 	const estadoUsu = e.target.estadoUsu.value
-
-		// 	try{
-		// 		if(emailUsu == '' || contrasenaUsu == '' || nombreUsu == '' || confirmarContra == '' || rolUsu == '' || estadoUsu == ''){
-		// 			throw ' No se admiten campos vacíos';
-		// 		}
-		// 		if(	!expresionEmail.test(emailUsu)){
-		// 			throw ' Email no cumple con el formato';
-		// 		}
-		// 		if(!expresioncontraU.test(contrasenaUsu)){
-		// 			throw ' Password no cumple con el formato';
-		// 		}
-		// 		if(!expresionconfirmContra.test(confirmarContra)){
-		// 			throw ' Password no cumple con el formato';
-		// 		}
-
-		// 		window.location.href = './login.html';
-
-		// 	}catch(i){				
-		// 			Swal.fire({
-		// 				icon: 'error',
-		// 				title: 'ERROR',
-		// 				text: i,
-						
-		// 	})
-		// 	}
-		// })
 
 		

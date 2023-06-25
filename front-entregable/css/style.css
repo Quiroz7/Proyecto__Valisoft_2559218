@@ -11,12 +11,12 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #ffa500;
+    background: url(../pictures/logimg.webp);  
     transition: .5s;
 }
 
 body.active{
-    background: #03a9f4;
+    background: url(../pictures/logimg2.jpeg);
 }
 
 .container{
@@ -141,6 +141,7 @@ body.active{
 
 .form form input[value="Crear"]{
     background: #03a9f4;
+   
     border: none;
     max-width: 100px;
     color: #ffff;

@@ -71,6 +71,7 @@ body{
     margin-top: 30px;
     padding-bottom: 30px;
     border-radius: 3px;
+    backdrop-filter: blur(10px);
 }
 
 .container .form .form-label{
