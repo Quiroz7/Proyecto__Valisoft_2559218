@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-const url = "https://project-valisoft-2559218.onrender.com/api/proveedores";
-const urlUsu = "https://project-valisoft-2559218.onrender.com/api/usuarios";
-const urlalert = "https://project-valisoft-2559218.onrender.com/api/alertas";
-=======
+
 const url = 'https://project-valisoft-2559218.onrender.com/api/proveedores' 
 const urlUsu = 'https://project-valisoft-2559218.onrender.com/api/usuarios' 
 const urlalert = 'https://project-valisoft-2559218.onrender.com/api/alertas' 
->>>>>>> f21ef1dd0e310a5a7256e5e927905d704f04507a
+
 
 // --> PROVEEDORES <--
 const listarProveedores = async () => {
@@ -59,7 +55,6 @@ const crearProveedores = async () => {
     estadoProv: estadoProv,
   };
 
-  
   if (
     nombreProveedor == "" ||
     nit == "" ||
@@ -75,10 +70,26 @@ const crearProveedores = async () => {
     return;
   }
 
-    // const expresionNombreProv = /^([0-9]*[a-z]*)\[a-z]*\.[a-z]*$/
-    // const expresionNit = /^([0-9]*[a-z]*)/
+    const expresionNombreProv = /^[a-zA-Z0-9_-]+$/
+    const expresionNit =  /^[1-9]\d*$/
     const expresionEmail = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/
     const expresionTelefono = /^\d{10}$/
+
+    if(!expresionNombreProv.test(nombreProveedor)) {
+      Swal.fire({
+        title: "El nombre del proveedor no cumple",
+        icon: "error",
+      });
+      return;
+    }
+
+    if(!expresionNit.test(nit)) {
+      Swal.fire({
+        title: "El nit no cumple",
+        icon: "error",
+      });
+      return;
+    }
 
     if(!expresionEmail.test(emailProv)) {
       Swal.fire({
@@ -88,7 +99,6 @@ const crearProveedores = async () => {
       return;
     }
 
-<<<<<<< HEAD
     if(!expresionTelefono.test(telefonoProv)) {
       Swal.fire({
         title: "El teléfono no cumple",
@@ -96,40 +106,6 @@ const crearProveedores = async () => {
       });
       return;
     }
-=======
-listarProveedores()
-
-const crearProveedores = async() => {
-    let nombreProveedor = document.getElementById('nombreProveedor').value
-    let nit = document.getElementById('nit').value
-    let emailProv = document.getElementById('emailProv').value
-    let telefonoProv = document.getElementById('telefonoProv').value
-    let categoriaProv = document.getElementById('categoriaProv').value
-    let estadoProv = document.getElementById('estadoProv').value
-    let errores = {
-        nombreProveedorError: ''
-    }
-
-    let proveedor = {
-        nombreProveedor : nombreProveedor,
-        nit : nit,
-        emailProv : emailProv,
-        telefonoProv : telefonoProv,
-        categoriaProv : categoriaProv,
-        estadoProv : estadoProv
-    }
-    fetch(url, {
-        method: 'POST',
-        mode: 'cors',
-        body:JSON.stringify(proveedor), //stringify() Es un método de JS que convierte un objeto o valor de JS en una cadena de texto JSON.
-        headers: {"Content-type": "application/json; charset=UTF-8"}
-    })
-    .then(response => response.json() )
-    .then(json => {
-        console.log(json.mensaje)
-    })
-}
->>>>>>> f21ef1dd0e310a5a7256e5e927905d704f04507a
 
   fetch(url, {
     method: "POST",
@@ -337,6 +313,7 @@ const registrarUsuario = async () => {
           });
           return;
     }
+
     if (
       contrasenaUsu.length > 0 &&
       confirmarContra.length > 0 &&
@@ -401,25 +378,15 @@ const registrarUsuario = async () => {
           }
         });
         })
-<<<<<<< HEAD
+
         .catch(() => {
           Swal.fire({
             title: 'Error de solicitud',
             icon: 'error'
           });
       });
-  } 
+  }
 
-=======
-        .then(response => response.json() )
-        .then(json => {
-            console.log(json.mensaje.errors)
-        })
-    }else{
-        alert('La contraseña y la confirmación de la contraseña no coiciden')
-    }
-}
->>>>>>> f21ef1dd0e310a5a7256e5e927905d704f04507a
 
 const editarUsu = async () => {
   const queryString = window.location.search;
@@ -610,7 +577,7 @@ const crearAlertas = async () => {
   let fechaAlerta = document.getElementById("fechaAlerta").value;
   let mensajeAlerta = document.getElementById("mensajeAlerta").value;
 
-<<<<<<< HEAD
+
   let alerta = {
     enteRegulatorio: enteRegulatorio,
     fechaAlerta: fechaAlerta,
@@ -640,25 +607,8 @@ const crearAlertas = async () => {
       });
     });
 };
-=======
-    let alerta = {
-        enteRegulatorio: enteRegulatorio,
-        fechaAlerta: fechaAlerta,
-        mensajeAlerta: mensajeAlerta
-    }
-    fetch(urlalert, {
-        method: 'POST',
-        mode: 'cors',
-        body:JSON.stringify(alerta),
-        headers: {"Content-type": "application/json; charset=UTF-8"}
-    })
-    .then(response => response.json() )
-    .then(json => {
-        console.log(json.mensaje.errors)
-    })
-}
->>>>>>> f21ef1dd0e310a5a7256e5e927905d704f04507a
 
+    
 const editarAlert = async () => {
   const queryString = window.location.search;
 
@@ -752,14 +702,12 @@ const eliminarAlert = (_id) => {
 
 // --> LLAMADO DE LOS BOTONES <--
 if (document.querySelector("#btn-crearProv")) {
-  document
-    .querySelector("#btn-crearProv")
+  document.querySelector("#btn-crearProv")
     .addEventListener("click", crearProveedores);
 }
 
 if (document.querySelector("#btn-actualizarProv")) {
-  document
-    .querySelector("#btn-actualizarProv")
+  document.querySelector("#btn-actualizarProv")
     .addEventListener("click", actualizarProveedor);
 }
 const editarProveedorBody = document.querySelector("#editarProveedorBody");
@@ -767,14 +715,12 @@ const editarProveedorBody = document.querySelector("#editarProveedorBody");
 editarProveedorBody?.addEventListener("load", editarProv());
 
 if (document.querySelector("#btn-registrarUsu")) {
-  document
-    .querySelector("#btn-registrarUsu")
+  document.querySelector("#btn-registrarUsu")
     .addEventListener("click", registrarUsuario);
 }
 
 if (document.querySelector("#btn-actualizarUsu")) {
-  document
-    .querySelector("#btn-actualizarUsu")
+  document.querySelector("#btn-actualizarUsu")
     .addEventListener("click", actualizarUsu);
 }
 
