@@ -217,6 +217,7 @@ const actualizarProveedor = async () => {
     .then((response) => response.json())
     .then((json) => {
       Swal.fire({
+        icon: 'success',
         title: json.mensaje,
       }).then(result=>{
         if(result.isConfirmed){
@@ -246,7 +247,7 @@ const eliminarProv = (_id) => {
         .then((response) => response.json())
         .then((json) => {
           Swal.fire({
-            icon: "error",
+            icon: 'success',
             title: "Eliminación éxitosa",
           }).then(result=>{
             if(result.isConfirmed){
@@ -372,6 +373,7 @@ const registrarUsuario = async () => {
       .then((response) => response.json())
       .then((json) => {
         Swal.fire({
+          icon: 'success',
           title: json.mensaje,
         }).then(result=>{
           if(result.isConfirmed){
@@ -501,6 +503,7 @@ const actualizarUsu = async () => {
       .then((response) => response.json())
       .then((json) => {
        Swal.fire({
+         icon: 'success',
         title: json.mensaje,
       }).then(result=>{
         if(result.isConfirmed){
@@ -530,7 +533,7 @@ const eliminarUsu = (_id) => {
       .then((response) => response.json())
       .then((json) => {
         Swal.fire({
-          icon: "error",
+          icon: 'success',
           title: "Eliminación éxitosa",
         }).then(result=>{
           if(result.isConfirmed){
@@ -601,6 +604,7 @@ const crearAlertas = async () => {
     .then((response) => response.json())
     .then((json) => {
       Swal.fire({
+        icon: 'success',
         title: json.mensaje,
       }).then(result=>{
         if(result.isConfirmed){
@@ -662,6 +666,7 @@ const actualizarAlerta = async () => {
     .then((response) => response.json())
     .then((json) => {
       Swal.fire({
+        icon: 'success',
         title: json.mensaje,
       }).then(result=>{
         if(result.isConfirmed){
@@ -691,7 +696,7 @@ const eliminarAlert = (_id) => {
     .then((response) => response.json())
         .then((json) => {
           Swal.fire({
-            icon: "error",
+            icon: 'success',
             title: "Eliminación éxitosa",
           }).then(result=>{
             if(result.isConfirmed){
