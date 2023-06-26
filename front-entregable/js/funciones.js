@@ -228,9 +228,10 @@ const actualizarProveedor = async () => {
 
 const eliminarProv = (_id) => {
   Swal.fire({
+    icon: "warning",
     title: "¿Está seguro de eliminar este proveedor?",
     showCancelButton: true, 
-    confirmButtonText: "Yes",
+    confirmButtonText: "Si",
   }).then((result) => {
     if (result.isConfirmed) {
       let proveedor = {
@@ -511,9 +512,10 @@ const actualizarUsu = async () => {
 
 const eliminarUsu = (_id) => {
   Swal.fire({
+    icon: "warning",
     title: "¿Está seguro de eliminar este usuario?",
     showCancelButton: true, 
-    confirmButtonText: "Yes",
+    confirmButtonText: "Si",
   }).then((result) => {
     if (result.isConfirmed) {
       let usuario = {
@@ -671,9 +673,10 @@ const actualizarAlerta = async () => {
 
 const eliminarAlert = (_id) => {
   Swal.fire({
+    icon: "warning",
     title: "¿Está seguro de eliminar esta alerta?",
     showCancelButton: true, 
-    confirmButtonText: "Yes",
+    confirmButtonText: "Si",
   }).then((result) => {
     if (result.isConfirmed) {
       let alerta = {
