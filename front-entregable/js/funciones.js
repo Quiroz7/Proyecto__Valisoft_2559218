@@ -28,7 +28,7 @@ const listarProveedores = async () => {
             )})'><i class="material-icons">border_color</i></a>
                                  <a class="btn-floating btn-large pulse" onclick='eliminarProv("${
                                    proveedor._id
-                                 }")'><i class="material-icons">delete</i></a>
+                                 }")'><i class="material-icons" style="color: red;">delete</i></a>
                             </td></tr>`;
           body.innerHTML = mensaje;
         });
@@ -281,7 +281,7 @@ const listarUsuarios = async () => {
             )})'><i class="material-icons">border_color</i></a>
                                  <a class="btn-floating btn-large pulse" onclick='eliminarUsu("${
                                    usuario._id
-                                 }")'><i class="material-icons">delete</i></a>
+                                 }")'><i class="material-icons" style="color: red;">delete</i></a>
                             </td></tr>`;
           body.innerHTML = mensaje;
         });
@@ -567,7 +567,7 @@ const listarAlertas = async () => {
             )}'><i class="material-icons">border_color</i></a>
                             <a class="btn-floating btn-large pulse" onclick='eliminarAlert("${
                               alerta._id
-                            }")'><i class="material-icons">delete</i></a>
+                            }")'><i class="material-icons" style="color: red;">delete</i></a>
                             </td></tr>`;
           body.innerHTML = mensaje;
         });
