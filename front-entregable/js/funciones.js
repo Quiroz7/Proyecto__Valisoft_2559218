@@ -28,7 +28,7 @@ const listarProveedores = async () => {
             )})'><i class="material-icons">border_color</i></a>
                                  <a class="btn-floating btn-large pulse" onclick='eliminarProv("${
                                    proveedor._id
-                                 }")'><i class="material-icons">delete</i></a>
+                                 }")'><i class="material-icons" style="color: red;">delete</i></a>
                             </td></tr>`;
           body.innerHTML = mensaje;
         });
@@ -116,6 +116,7 @@ const crearProveedores = async () => {
     .then((response) => response.json())
     .then((json) => {
       Swal.fire({
+        icon: 'success',
         title: json.mensaje,
       }).then(result=>{
         if(result.isConfirmed){
@@ -217,6 +218,7 @@ const actualizarProveedor = async () => {
     .then((response) => response.json())
     .then((json) => {
       Swal.fire({
+        icon: 'success',
         title: json.mensaje,
       }).then(result=>{
         if(result.isConfirmed){
@@ -245,7 +247,7 @@ const eliminarProv = (_id) => {
         .then((response) => response.json())
         .then((json) => {
           Swal.fire({
-            icon: "error",
+            icon: 'success',
             title: "Eliminación éxitosa",
           }).then(result=>{
             if(result.isConfirmed){
@@ -279,7 +281,7 @@ const listarUsuarios = async () => {
             )})'><i class="material-icons">border_color</i></a>
                                  <a class="btn-floating btn-large pulse" onclick='eliminarUsu("${
                                    usuario._id
-                                 }")'><i class="material-icons">delete</i></a>
+                                 }")'><i class="material-icons" style="color: red;">delete</i></a>
                             </td></tr>`;
           body.innerHTML = mensaje;
         });
@@ -371,6 +373,7 @@ const registrarUsuario = async () => {
       .then((response) => response.json())
       .then((json) => {
         Swal.fire({
+          icon: 'success',
           title: json.mensaje,
         }).then(result=>{
           if(result.isConfirmed){
@@ -500,6 +503,7 @@ const actualizarUsu = async () => {
       .then((response) => response.json())
       .then((json) => {
        Swal.fire({
+        icon: 'success',
         title: json.mensaje,
       }).then(result=>{
         if(result.isConfirmed){
@@ -528,7 +532,7 @@ const eliminarUsu = (_id) => {
       .then((response) => response.json())
       .then((json) => {
         Swal.fire({
-          icon: "error",
+          icon: 'success',
           title: "Eliminación éxitosa",
         }).then(result=>{
           if(result.isConfirmed){
@@ -562,7 +566,7 @@ const listarAlertas = async () => {
             )}'><i class="material-icons">border_color</i></a>
                             <a class="btn-floating btn-large pulse" onclick='eliminarAlert("${
                               alerta._id
-                            }")'><i class="material-icons">delete</i></a>
+                            }")'><i class="material-icons" style="color: red;">delete</i></a>
                             </td></tr>`;
           body.innerHTML = mensaje;
         });
@@ -599,6 +603,7 @@ const crearAlertas = async () => {
     .then((response) => response.json())
     .then((json) => {
       Swal.fire({
+        icon: 'success',
         title: json.mensaje,
       }).then(result=>{
         if(result.isConfirmed){
@@ -660,6 +665,7 @@ const actualizarAlerta = async () => {
     .then((response) => response.json())
     .then((json) => {
       Swal.fire({
+        icon: 'success',
         title: json.mensaje,
       }).then(result=>{
         if(result.isConfirmed){
@@ -688,7 +694,7 @@ const eliminarAlert = (_id) => {
     .then((response) => response.json())
         .then((json) => {
           Swal.fire({
-            icon: "error",
+            icon: 'success',
             title: "Eliminación éxitosa",
           }).then(result=>{
             if(result.isConfirmed){

@@ -4,12 +4,14 @@ const usuRoute = Router()
 
 const { getUsuario, postUsuario, putUsuario, deleteUsuario} = require('../controllers/usuario')
 
-usuRoute.get('/', getUsuario)
+const  {isAuthenticated}  = require('../controllers/auth')
 
-usuRoute.post('/', postUsuario)
+usuRoute.get('/', isAuthenticated, getUsuario)
 
-usuRoute.put('/', putUsuario)
+usuRoute.post('/', isAuthenticated,  postUsuario)
 
-usuRoute.delete('/', deleteUsuario)
+usuRoute.put('/', isAuthenticated, putUsuario)
+
+usuRoute.delete('/', isAuthenticated, deleteUsuario)
 
 module.exports = usuRoute

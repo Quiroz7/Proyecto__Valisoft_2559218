@@ -4,12 +4,14 @@ const provRoute = Router()
 
 const  { getProveedor, postProveedor, putProveedor, deleteProveedor} = require('../controllers/proveedor')
 
-provRoute.get('/', getProveedor)
+const  {isAuthenticated}  = require('../controllers/auth')
 
-provRoute.post('/', postProveedor)
+provRoute.get('/', isAuthenticated, getProveedor)
 
-provRoute.put('/', putProveedor)
+provRoute.post('/', isAuthenticated, postProveedor)
 
-provRoute.delete('/', deleteProveedor)
+provRoute.put('/', isAuthenticated, putProveedor)
+
+provRoute.delete('/', isAuthenticated, deleteProveedor)
 
 module.exports = provRoute

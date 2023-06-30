@@ -1,4 +1,5 @@
 const { response } = require('express')
+const bcrypt = require('bcrypt')
 
 const Usuario = require('../models/usuario')
 
@@ -20,6 +21,7 @@ const postUsuario = async (req, res = response) => {
     const body = req.body
     let mensaje = ''
     const usuarios = new Usuario(body)
+    usuarios.password = bcrypt.hashSync(body.password, 10)
 
     try {
         await usuarios.save()
