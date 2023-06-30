@@ -4,14 +4,14 @@ const alertRoute = Router()
 
 const { getAlerta, postAlerta, putAlerta, deleteAlerta} = require('../controllers/alerta')
 
-const  {isAuthenticated}  = require('../controllers/auth')
+// const  {isAuthenticated}  = require('../controllers/auth')
 
-alertRoute.get('/',isAuthenticated,  getAlerta)
+alertRoute.get('/', getAlerta)
 
-alertRoute.post('/', isAuthenticated, postAlerta)
+alertRoute.post('/', postAlerta)
 
-alertRoute.put('/', isAuthenticated, putAlerta)
+alertRoute.put('/',  putAlerta)
 
-alertRoute.delete('/', isAuthenticated, deleteAlerta)
+alertRoute.delete('/', deleteAlerta)
 
 module.exports = alertRoute

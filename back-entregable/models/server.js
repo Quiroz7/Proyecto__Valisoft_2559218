@@ -4,7 +4,7 @@ const cors = require('cors')
 
 const bodyParser = require('body-parser') 
 
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 
 const dbConection = require('../database/config')
 
@@ -27,7 +27,7 @@ class server{
     }
 
     middlewares() {
-        this.app.use(cookieParser()); 
+        // this.app.use(cookieParser()); 
 
         this.app.use(express.static(__dirname + "/public"));
 

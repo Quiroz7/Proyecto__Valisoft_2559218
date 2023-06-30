@@ -6,12 +6,12 @@ const { getUsuario, postUsuario, putUsuario, deleteUsuario} = require('../contro
 
 const  {isAuthenticated}  = require('../controllers/auth')
 
-usuRoute.get('/', isAuthenticated, getUsuario)
+usuRoute.get('/',  getUsuario)
 
-usuRoute.post('/', isAuthenticated,  postUsuario)
+usuRoute.post('/',  postUsuario)
 
-usuRoute.put('/', isAuthenticated, putUsuario)
+usuRoute.put('/',  putUsuario)
 
-usuRoute.delete('/', isAuthenticated, deleteUsuario)
+usuRoute.delete('/',  deleteUsuario)
 
 module.exports = usuRoute
