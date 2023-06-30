@@ -504,11 +504,6 @@ const actualizarUsu = async () => {
       .then((response) => response.json())
       .then((json) => {
        Swal.fire({
-<<<<<<< HEAD
-        icon: 'success',
-=======
-         icon: 'success',
->>>>>>> 4546c1bfd81161189ff8c991273b4d53f81f261f
         title: json.mensaje,
       }).then(result=>{
         if(result.isConfirmed){
