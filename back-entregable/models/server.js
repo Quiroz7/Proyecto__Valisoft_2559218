@@ -4,7 +4,7 @@ const cors = require('cors')
 
 const bodyParser = require('body-parser') 
 
-// const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 
 const dbConection = require('../database/config')
 
@@ -18,6 +18,7 @@ class server{
         this.proveedorPath = '/api/proveedores'
         this.usuarioPath = '/api/usuarios'
         this.alertaPath = '/api/alertas'
+        this.authPath = '/api/auth' 
 
         this.middlewares() 
 
@@ -27,7 +28,7 @@ class server{
     }
 
     middlewares() {
-        // this.app.use(cookieParser()); 
+        this.app.use(cookieParser()); 
 
         this.app.use(express.static(__dirname + "/public"));
 
@@ -43,6 +44,8 @@ class server{
         this.app.use(this.usuarioPath, require('../routes/usuarios'))
 
         this.app.use(this.alertaPath, require('../routes/alertas'))
+
+        this.app.use(this.authPath, require('../routes/auth'))
     }
 
     async dbConectar(){

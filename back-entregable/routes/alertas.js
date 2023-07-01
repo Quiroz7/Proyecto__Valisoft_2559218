@@ -4,7 +4,7 @@ const alertRoute = Router()
 
 const { getAlerta, postAlerta, putAlerta, deleteAlerta} = require('../controllers/alerta')
 
-// const  {isAuthenticated}  = require('../controllers/auth')
+
 
 alertRoute.get('/', getAlerta)
 
