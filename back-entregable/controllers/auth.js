@@ -1,55 +1,55 @@
-const Usuario = require('../models/usuario')
-const bcrypt = require('bcrypt')
-const { generarJWT } = require('../helpers/generar-jwt')
-//const jwt = require('jsonwebtoken');
+// const Usuario = require('../models/usuario')
+// const bcrypt = require('bcrypt')
+// const { generarJWT } = require('../helpers/generar-jwt')
+// //const jwt = require('jsonwebtoken');
 
-async function comparePassword(plaintextPassword, hash) {
-    const result = await bcrypt.compare(plaintextPassword, hash);
-    return result;
-}
+// async function comparePassword(plaintextPassword, hash) {
+//     const result = await bcrypt.compare(plaintextPassword, hash);
+//     return result;
+// }
 
-const login = async(req, res) => {
-    const { nombreUsu, contrasenaUsu } = req.body
+// const login = async(req, res) => {
+//     const { nombreUsu, contrasenaUsu } = req.body
     
-    //Verificar si el email existe
-    const usuarios = await Usuario.findOne({nombreUsu})
+//     //Verificar si el email existe
+//     const usuarios = await Usuario.findOne({nombreUsu})
     
-    try {
+//     try {
 
-        if(!usuarios){//Si encontró el email
-            return res.status(400).json({
-                msg: 'nombre no encontrado'
-            })
-        }
+//         if(!usuarios){//Si encontró el email
+//             return res.status(400).json({
+//                 msg: 'nombre no encontrado'
+//             })
+//         }
     
-        if( !usuarios.estadoUsu ){
-            return res.status(400).json({
-                msg: 'Usuario inactivo'
-            })            
-        }
+//         if( !usuarios.estadoUsu ){
+//             return res.status(400).json({
+//                 msg: 'Usuario inactivo'
+//             })            
+//         }
 
-        resultado = await comparePassword(contrasenaUsu, usuarios.contrasenaUsu)
+//         resultado = await comparePassword(contrasenaUsu, usuarios.contrasenaUsu)
 
-        if(resultado == true){
+//         if(resultado == true){
             //const token = await generarJWT(usuarios)
             //res.cookie('token',token); creando la cookie
-            return res.status(200).json({
-                usuarios,
-                //token
-            })
-        }
-        else{
-            return res.status(400).json({
-                msg: 'La contraseña es incorrecta'
-            })  
-        }
+//             return res.status(200).json({
+//                 usuarios,
+//                 //token
+//             })
+//         }
+//         else{
+//             return res.status(400).json({
+//                 msg: 'La contraseña es incorrecta'
+//             })  
+//         }
         
-    } catch (error) {
-        return res.status(400).json({
-            msg: 'Apreciado usuario contacte al administrador.'
-        })
-    }
-}
+//     } catch (error) {
+//         return res.status(400).json({
+//             msg: 'Apreciado usuario contacte al administrador.'
+//         })
+//     }
+// }
 
 // const isAuthenticated = async (req,res,next)=>{
 //     try {
@@ -69,7 +69,7 @@ const login = async(req, res) => {
 // }
 
 
-module.exports = {
-    login,
-    isAuthenticated
-}
+// module.exports = {
+//     login,
+//     isAuthenticated
+// }
