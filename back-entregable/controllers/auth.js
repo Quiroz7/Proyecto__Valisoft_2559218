@@ -1,7 +1,7 @@
 const Usuario = require('../models/usuario')
 const bcrypt = require('bcrypt')
 const { generarJWT } = require('../helpers/generar-jwt')
-const jwt = require('jsonwebtoken');
+//const jwt = require('jsonwebtoken');
 
 async function comparePassword(plaintextPassword, hash) {
     const result = await bcrypt.compare(plaintextPassword, hash);
@@ -31,11 +31,11 @@ const login = async(req, res) => {
         resultado = await comparePassword(contrasenaUsu, usuarios.contrasenaUsu)
 
         if(resultado == true){
-            const token = await generarJWT(usuarios)
-            res.cookie('token',token);//creando la cookie
+            //const token = await generarJWT(usuarios)
+            //res.cookie('token',token); creando la cookie
             return res.status(200).json({
-                //usuarios,
-                token
+                usuarios,
+                //token
             })
         }
         else{
@@ -51,22 +51,22 @@ const login = async(req, res) => {
     }
 }
 
-const isAuthenticated = async (req,res,next)=>{
-    try {
-        const {token} = req.cookies;
-        console.log('token:'+token)
-        if(!token){
-            return next('Por favor logueese.');
-        }
-        const verify = jwt.verify(token,process.env.SECRET_KEY);
-        console.log('verify:'+verify)
+// const isAuthenticated = async (req,res,next)=>{
+//     try {
+//         const {token} = req.cookies;
+//         console.log('token:'+token)
+//         if(!token){
+//             return next('Por favor logueese.');
+//         }
+//         const verify = jwt.verify(token,process.env.SECRET_KEY);
+//         console.log('verify:'+verify)
         
-        req.user = await Usuario.findById(verify.id);
-        next();
-    } catch (error) {
-       return next(error); 
-    }
-}
+//         req.user = await Usuario.findById(verify.id);
+//         next();
+//     } catch (error) {
+//        return next(error); 
+//     }
+// }
 
 
 module.exports = {
